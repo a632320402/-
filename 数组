@@ -1,0 +1,19 @@
+<?php echo form::input('select','group_id',$_GET['group_id'] ? $_GET['group_id'] : 0,'保护状态','',array('items' => $baohu))?>
+控制器 
+  $baohu = $this->service->baohu();
+service层
+ public function baohu(){
+      $data  =  array(
+         '0'=>'不限',
+         '1'=>'正在保护',
+         '2'=>'保护过期',
+         '3'=>'已取消保护',
+         '4'=>'7天过保护期',
+
+       );
+           return $data;
+  }
+ 
+
+
+
